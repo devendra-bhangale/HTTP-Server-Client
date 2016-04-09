@@ -1,0 +1,43 @@
+/*
+ * client.h
+ *
+ *  Created on: Feb 28, 2016
+ *      Author: devendra
+ */
+
+/* LIBRARIES */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+
+/* MACROS */
+#define BUFFSIZE 8192		// max size of buffer
+#define VERSION "HTTP/1.1"	// http version
+#define HOST "localhost"	// server host
+#define EOR "\r\n\r\n"		// end of response
+#define OK "200"			// check if response is '200 OK'
+#define FOUND 1				// if requested file is found
+#define NOTFOUND 0			// if requested file is not found
+
+/* STRUCTURES */
+
+/* FUNCTIONS */
+void get_request(int connfd, char method[100], char filename[100]);		// makes a GET request to the server
+void put_request(int connfd, char method[100], char filename[100]);		// makes a PUT request to the server
+void get_filetype(char *filename, char *filetype);		// extracts the file-type from its name
+void get_filename(char *filename);		// extracts the file-name without any leading '/'
+
+/* GLOBAL VARIABLES */
+int req_count = 1;		// counter for number of requests served
+
+
