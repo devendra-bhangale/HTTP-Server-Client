@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>My Server</title>
+	</head>
+
+	<body bgcolor=white>
+		<p align="middle">WELCOME HOME!!</p>
+
+		<table border="0" cellpadding="10">
+			<tr>
+				<td>
+					<img src="ryu.jpg">
+				</td>
+
+				<td>
+					<h1>Come to Fight??</h1>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>
